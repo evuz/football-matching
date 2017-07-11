@@ -1,0 +1,12 @@
+.header_component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 10px;
+  background-color: #f8b195;
+  color: whitesmoke;
+  svg {
+    font-size: 25px;
+  }
+}
