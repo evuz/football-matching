@@ -1,0 +1,27 @@
+.input_component {
+	display: flex;
+	flex-direction: row-reverse;
+	border-bottom: 1px solid rgba(53, 92, 125, .4);
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+
+	input {
+		// General styles
+		outline: none;
+		border: 0;
+		color: #355c7d;
+		background: transparent;
+		font-family: 'Lato';
+		flex: 1 0 auto;
+		font-size: 14px;
+		font-weight: 300;
+
+		// Animation triggers
+		&:focus ~ label {
+			opacity: 1;
+		}
+    &:focus {
+      outline: none;
+    }
+	}
+}
