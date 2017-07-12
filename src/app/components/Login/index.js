@@ -7,6 +7,7 @@ import './index.css';
 const LoginComponent = () => (
   <div className="login_component">
     <div className="login_card">
+      <h3>Login</h3>
       <form>
         <Input
           id="name"
@@ -23,7 +24,10 @@ const LoginComponent = () => (
           type="password"
           placeholder="password"
         />
-        <button>Log in</button>
+        <div className="buttons">
+          <button>Register</button>
+          <button>Log in</button>
+        </div>
       </form>
     </div>
   </div>
