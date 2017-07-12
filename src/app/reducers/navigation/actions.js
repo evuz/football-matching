@@ -2,10 +2,14 @@ import { } from './actionTypes';
 import { push } from 'react-router-redux';
 
 export function goLogin(user) {
+  return (dispatch) => {
+    dispatch(push('login'))
+  }
+}
+
+export function toogleLogin() {
   return (dispatch, getState) => {
-    const { route: { location } } = getState();
-    const pathname = location.pathname.indexOf('login') > -1 ? location.pathname :
-      location.pathname === '/' ? '/login' : `${location.pathname}/login`;
-    dispatch(push(pathname));
+    const { pathname } = getState().route.location;
+    dispatch(push(pathname === '/login' ? 'register' : 'login'))
   }
 }
