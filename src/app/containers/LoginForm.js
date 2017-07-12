@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import InputComponent from '@/components/Input';
 
 const LoginForm = (props) => (
-  <form onSubmit={props.handldeSubmit}>
+  <form onSubmit={props.handleSubmit}>
     <Field
       name="username"
       component={InputComponent}
