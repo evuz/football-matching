@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import LoginComponent from '@/components/Login';
+import LoginContainer from '@/containers/Login';
 
 const RouteContainer = () => (
   <div className="route">
-    <Route path="/" exact component={LoginComponent} />
-    <Route path="/login" exact component={LoginComponent} />
+    <Route path="/" exact component={LoginContainer} />
+    <Route path="/login" exact component={LoginContainer} />
   </div>
 );
 
