@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
+import { createHashHistory } from 'history';
 
 function configureStore() {
-  const history = createHistory();
+  const history = createHashHistory();
   const appReducers = combineReducers({
     route: routerReducer
   });
