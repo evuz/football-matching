@@ -6,3 +6,10 @@ export function goLogin(user) {
     dispatch(push('login'))
   }
 }
+
+export function toogleLogin() {
+  return (dispatch, getState) => {
+    const { pathname } = getState().route.location;
+    dispatch(push(pathname === '/login' ? 'register' : 'login'))
+  }
+}
