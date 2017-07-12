@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LoginComponent from '@/components/Login';
 import LoginFormContainer from '@/containers/LoginForm';
 import { toogleLogin } from '@/reducers/navigation';
-import { handleSubmit } from '@/reducers/login';
+import { loginSubmit } from '@/reducers/login';
 import capitalizeFirstLetter from '@/utils/filters/capitalizeFirstLetter';
 
 const LoginContainer = (props) => (
@@ -22,7 +22,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   onChangeScreen: toogleLogin,
-  onSubmit: handleSubmit
+  onSubmit: loginSubmit
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
