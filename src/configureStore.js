@@ -1,12 +1,15 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form'
+import thunk from 'redux-thunk';
+
 import { createHashHistory } from 'history';
 
 function configureStore() {
   const history = createHashHistory();
   const appReducers = combineReducers({
-    route: routerReducer
+    route: routerReducer,
+    form: formReducer
   });
 
   let enhacer;
