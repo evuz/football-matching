@@ -4,8 +4,9 @@
   align-items: center;
   flex: 1;
   padding: 10px;
-  background-color: #f8b195;
-  color: whitesmoke;
+  background-color: #393856;
+  color: #FAF9F9;
+  font-size: 20px;
   svg {
     font-size: 25px;
   }

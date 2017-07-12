@@ -1,0 +1,32 @@
+.input_component {
+	display: flex;
+	flex-direction: row-reverse;
+	border-bottom: 1px solid rgba(250, 249, 249, .4);
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+  width: 100%;
+
+	input {
+		// General styles
+		outline: none;
+		border: 0;
+		color: #FAF9F9;
+		background: transparent;
+		font-family: 'Lato';
+		flex: 1 0 auto;
+		font-size: 14px;
+		font-weight: 300;
+
+    &::placeholder {
+      color: rgba(250, 249, 249, .4);
+    }
+
+		// Animation triggers
+		&:focus ~ label {
+			opacity: 1;
+		}
+    &:focus {
+      outline: none;
+    }
+	}
+}
