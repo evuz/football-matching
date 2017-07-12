@@ -2,17 +2,17 @@ import React from 'react';
 
 import './index.css';
 
-const InputComponent = (props) => (
+const InputComponent = ({input, type, placeholder, name}) => (
   <div className="input_component">
     <input
       autoComplete="false"
-      required
-      id={props.name}
-      type={props.type}
-      placeholder={props.placeholder}
+      {...input}
+      type={type}
+      placeholder={placeholder}
     />
-    <label htmlFor={props.name}></label>
+    <label htmlFor={name}></label>
   </div>
 );
 
 export default InputComponent;
+
