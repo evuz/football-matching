@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import LoginComponent from '@/components/Login';
-import LoginFormContainer from '@/containers/LoginForm';
+import RegisterFormContainer from '@/containers/RegisterForm';
 import { toogleLogin } from '@/reducers/navigation';
 import { handleSubmit } from '@/reducers/login';
 import capitalizeFirstLetter from '@/utils/filters/capitalizeFirstLetter';
 
-const LoginContainer = (props) => (
+const RegisterContainer = (props) => (
   <LoginComponent title={capitalizeFirstLetter(props.screen)}>
-    <LoginFormContainer
+    <RegisterFormContainer
       onChangeScreen={props.onChangeScreen}
       onSubmit={props.onSubmit}
     />
@@ -25,4 +25,4 @@ const mapDispatchToProps = {
   onSubmit: handleSubmit
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterContainer);
