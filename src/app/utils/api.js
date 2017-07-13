@@ -26,3 +26,13 @@ export function singIn(values) {
     })
   }).then((res) => res.json());
 }
+
+export function tokenSingIn(token) {
+  return fetch(`${apiUrl}api/signin`, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }).then((res) => res.json());
+}
