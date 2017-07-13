@@ -1,6 +1,6 @@
 import { signUp, signIn, tokenSignIn } from '@/utils/api';
 import { getToken } from '@/utils/localStorage';
-import { setUser } from '@/reducers/user';
+import { setUser, removeUser } from '@/reducers/user';
 import { setInitApp } from '@/reducers/app';
 
 export function loginWithToken() {
@@ -10,17 +10,22 @@ export function loginWithToken() {
       tokenSignIn(token)
         .then(({ error, user }) => {
           if (error) {
-            dispatch(setInitApp(true))
+            handleError(dispatch);
             return error;
           }
           dispatch(setUser(user));
           dispatch(setInitApp(true))
         })
-        .catch(() => dispatch(setInitApp(true)))
+        .catch(() => handleError(dispatch))
     } else {
       dispatch(setInitApp(true))
     }
   }
+}
+
+function handleError(dispatch) {
+  dispatch(removeUser());
+  dispatch(setInitApp(true))
 }
 
 export function loginSubmit(values) {
