@@ -1,4 +1,4 @@
-import { singUp, singIn, tokenSingIn } from '@/utils/api';
+import { signUp, signIn, tokenSignIn } from '@/utils/api';
 import { getToken } from '@/utils/localStorage';
 import { setUser } from '@/reducers/user';
 
@@ -6,7 +6,7 @@ export function loginWithToken() {
   return (dispatch) => {
     const token = getToken();
     if (token) {
-      tokenSingIn(token)
+      tokenSignIn(token)
         .then(({error, user}) => {
           if (error) return error;
           dispatch(setUser(user));
@@ -19,7 +19,7 @@ export function loginWithToken() {
 
 export function loginSubmit(values) {
   return (dispatch) => {
-    singIn(values)
+    signIn(values)
       .then(({ error, user }) => {
         if (error) return error;
         dispatch(setUser(user));
@@ -29,7 +29,7 @@ export function loginSubmit(values) {
 
 export function registerSubmit(values) {
   return (dispatch) => {
-    singUp(values)
+    signUp(values)
       .then((res) => {
         console.log(res);
       })

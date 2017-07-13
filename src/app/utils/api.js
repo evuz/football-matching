@@ -1,6 +1,6 @@
 const apiUrl = 'http://localhost:3001/';
 
-export function singUp(values) {
+export function signUp(values) {
   return fetch(`${apiUrl}api/signup`, {
     method: 'POST',
     headers: {
@@ -14,7 +14,7 @@ export function singUp(values) {
   }).then((res) => res.json());
 }
 
-export function singIn(values) {
+export function signIn(values) {
   return fetch(`${apiUrl}api/signin`, {
     method: 'POST',
     headers: {
@@ -27,7 +27,7 @@ export function singIn(values) {
   }).then((res) => res.json());
 }
 
-export function tokenSingIn(token) {
+export function tokenSignIn(token) {
   return fetch(`${apiUrl}api/signin`, {
     method: 'GET',
     headers: {
