@@ -1,4 +1,7 @@
-import { SET_USER } from './actionTypes';
+import {
+  SET_USER,
+  REMOVE_USER
+ } from './actionTypes';
 
 export function setUser(user) {
   return {
@@ -6,5 +9,11 @@ export function setUser(user) {
     payload: {
       user
     }
+  }
+}
+
+export function removeUser(user) {
+  return {
+    type: REMOVE_USER
   }
 }
