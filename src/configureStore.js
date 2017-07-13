@@ -5,11 +5,14 @@ import thunk from 'redux-thunk';
 
 import { createHashHistory } from 'history';
 
+import user from '@/reducers/user'
+
 function configureStore() {
   const history = createHashHistory();
   const appReducers = combineReducers({
     route: routerReducer,
-    form: formReducer
+    form: formReducer,
+    user
   });
 
   let enhacer;
