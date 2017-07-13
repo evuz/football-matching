@@ -16,14 +16,14 @@ class App extends Component {
   renderApp(initApp) {
     if (initApp) {
       return (
-        <div className="app_component">
+        <div className="App">
           <Header />
           <Route />
         </div>
       )
     }
     return (
-      <div className="app_component">
+      <div className="App">
         Loading ...
       </div>
     )
@@ -31,12 +31,8 @@ class App extends Component {
 
   render() {
     const { app: { initApp } } = this.props;
-    const app = this.renderApp(initApp);
-    return (
-      <div className="App">
-        { app }
-      </div>
-    )
+    const appRenderer = this.renderApp(initApp);
+    return appRenderer;
   }
 };
 
