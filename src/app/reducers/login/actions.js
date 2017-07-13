@@ -1,11 +1,27 @@
-import { singUp, singIn } from '@/utils/api';
+import { singUp, singIn, tokenSingIn } from '@/utils/api';
+import { getToken } from '@/utils/localStorage';
 import { setUser } from '@/reducers/user';
+
+export function loginWithToken() {
+  return (dispatch) => {
+    const token = getToken();
+    if (token) {
+      tokenSingIn(token)
+        .then(({error, user}) => {
+          if (error) return error;
+          dispatch(setUser(user));
+        })
+    } else {
+      // TODO: Init app
+    }
+  }
+}
 
 export function loginSubmit(values) {
   return (dispatch) => {
     singIn(values)
-      .then(({error, user}) => {
-        if(error) return error;
+      .then(({ error, user }) => {
+        if (error) return error;
         dispatch(setUser(user));
       })
   }
