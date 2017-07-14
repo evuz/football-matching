@@ -3,17 +3,21 @@ import { connect } from 'react-redux';
 
 import LoginComponent from '@/components/Login';
 import LoginFormContainer from '@/containers/LoginForm';
+import MatchListContainer from '@/containers/MatchList';
 import { toogleLogin } from '@/reducers/navigation';
 import { loginSubmit } from '@/reducers/login';
 import capitalizeFirstLetter from '@/utils/filters/capitalizeFirstLetter';
 
 const LoginContainer = (props) => (
-  <LoginComponent title={capitalizeFirstLetter(props.screen)}>
-    <LoginFormContainer
-      onChangeScreen={props.onChangeScreen}
-      onSubmit={props.onSubmit}
-    />
-  </LoginComponent>
+  <div className="body">
+    <LoginComponent title={capitalizeFirstLetter(props.screen)}>
+      <LoginFormContainer
+        onChangeScreen={props.onChangeScreen}
+        onSubmit={props.onSubmit}
+      />
+    </LoginComponent>
+    <MatchListContainer />
+  </div>
 )
 
 const mapStateToProps = (state) => ({
