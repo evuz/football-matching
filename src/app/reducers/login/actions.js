@@ -13,7 +13,7 @@ export function loginWithToken() {
             handleError(dispatch);
             return error;
           }
-          dispatch(setUser(user));
+          dispatch(setUser(Object.assign({}, user, {token})));
           dispatch(setInitApp(true))
         })
         .catch(() => handleError(dispatch))
