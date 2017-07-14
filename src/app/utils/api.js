@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:3001/';
+// const apiUrl = 'http://localhost:3001/';
+const apiUrl = 'https://enigmatic-waters-30776.herokuapp.com/';
 
 export function signUp(values) {
   return fetch(`${apiUrl}api/signup`, {
@@ -33,6 +34,15 @@ export function tokenSignIn(token) {
     headers: {
       'Content-type': 'application/json',
       'Authorization': `Bearer ${token}`
+    }
+  }).then((res) => res.json());
+}
+
+export function getMatchesAPI() {
+  return fetch(`${apiUrl}api/match`, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json'
     }
   }).then((res) => res.json());
 }
