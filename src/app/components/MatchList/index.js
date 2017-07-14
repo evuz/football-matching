@@ -6,8 +6,9 @@ import MatchItemComponent from '@/components/MatchItem';
 import './index.css'
 
 const MatchListComponent = ({ matchList }) => {
-  const itemsRenderer = matchList.list.map((match) => (
+  const itemsRenderer = matchList.list.map((match, index) => (
     <MatchItemComponent
+      key={index}
       match={match}
     />
   ))
