@@ -1,6 +1,7 @@
 import {
   SET_USER,
-  REMOVE_USER
+  REMOVE_USER,
+  SET_USER_PROPERTY
 } from './actionTypes';
 import { createPlayerAPI } from '@/utils/api';
 
@@ -9,6 +10,15 @@ export function setUser(user) {
     type: SET_USER,
     payload: {
       user
+    }
+  }
+}
+
+export function setUserProperty(props) {
+  return {
+    type: SET_USER_PROPERTY,
+    payload: {
+      props
     }
   }
 }
@@ -24,7 +34,9 @@ export function createPlayerSubmit(values) {
     const { token } = getState().user;
     createPlayerAPI(values, token)
       .then((res) => {
-        console.log(res);
+        dispatch(setUserProperty({
+          playerId: res.player
+        }))
       })
   }
 }
