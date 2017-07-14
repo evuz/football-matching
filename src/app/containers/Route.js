@@ -5,6 +5,7 @@ import MainContainer from '@/containers/Main';
 import MatchListContainer from '@/containers/MatchList';
 import PublicRoute from '@/containers/PublicRoute';
 import PrivateRoute from '@/containers/PrivateRoute';
+import CreatePlayerContainer from '@/containers/CreatePlayer';
 import LoginContainer from '@/containers/Login';
 import RegisterContainer from '@/containers/Register';
 
@@ -15,7 +16,7 @@ const RouteContainer = () => (
     <PublicRoute path="/register" exact component={RegisterContainer} />
     <PrivateRoute path="/private" exact component={RegisterContainer} />
     <Route path="/matchs" exact component={MatchListContainer} />
-    <Route path="/createOwnPlayer" exact component={RegisterContainer} />
+    <Route path="/createOwnPlayer" exact component={CreatePlayerContainer} />
   </Switch>
 );
 
