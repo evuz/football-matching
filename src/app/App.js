@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import Loading from '@/components/Loading';
 import Header from '@/containers/Header';
 import Route from '@/containers/Route';
 import { loginWithToken } from '@/reducers/login';
@@ -24,7 +25,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        Loading ...
+        <Loading />
       </div>
     )
   }
