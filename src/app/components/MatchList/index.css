@@ -1,0 +1,10 @@
+.match_list_component {
+  display: flex;
+  flex: 1;
+
+  ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
