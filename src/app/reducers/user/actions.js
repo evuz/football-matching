@@ -1,7 +1,8 @@
 import {
   SET_USER,
   REMOVE_USER
- } from './actionTypes';
+} from './actionTypes';
+import { createPlayerAPI } from '@/utils/api';
 
 export function setUser(user) {
   return {
@@ -15,5 +16,15 @@ export function setUser(user) {
 export function removeUser(user) {
   return {
     type: REMOVE_USER
+  }
+}
+
+export function createPlayerSubmit(values) {
+  return (dispatch, getState) => {
+    const { token } = getState().user;
+    createPlayerAPI(values, token)
+      .then((res) => {
+        console.log(res);
+      })
   }
 }
