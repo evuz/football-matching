@@ -1,5 +1,5 @@
-// const apiUrl = 'http://localhost:3001/';
-const apiUrl = 'https://enigmatic-waters-30776.herokuapp.com/';
+const apiUrl = 'http://localhost:3001/';
+// const apiUrl = 'https://enigmatic-waters-30776.herokuapp.com/';
 
 export function signUp(values) {
   return fetch(`${apiUrl}api/signup`, {

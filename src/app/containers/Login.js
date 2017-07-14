@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import LoginComponent from '@/components/Login';
+import FormsDecoratorComponent from '@/components/FormsDecorator';
 import LoginFormContainer from '@/containers/LoginForm';
 import MatchListContainer from '@/containers/MatchList';
 import { toogleLogin } from '@/reducers/navigation';
@@ -10,12 +10,12 @@ import capitalizeFirstLetter from '@/utils/filters/capitalizeFirstLetter';
 
 const LoginContainer = (props) => (
   <div className="body">
-    <LoginComponent title={capitalizeFirstLetter(props.screen)}>
+    <FormsDecoratorComponent title={capitalizeFirstLetter(props.screen)}>
       <LoginFormContainer
         onChangeScreen={props.onChangeScreen}
         onSubmit={props.onSubmit}
       />
-    </LoginComponent>
+    </FormsDecoratorComponent>
     <MatchListContainer />
   </div>
 )
