@@ -46,3 +46,14 @@ export function getMatchesAPI() {
     }
   }).then((res) => res.json());
 }
+
+export function createPlayerAPI(values, token) {
+  return fetch(`${apiUrl}api/player`, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(values)
+  }).then((res) => res.json());
+}
