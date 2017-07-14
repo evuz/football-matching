@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 
 import { createHashHistory } from 'history';
 
+import matchList from '@/reducers/matchList'
 import user from '@/reducers/user'
 import app from '@/reducers/app'
 
@@ -14,7 +15,8 @@ function configureStore() {
     route: routerReducer,
     form: formReducer,
     user,
-    app
+    app,
+    matchList
   });
 
   let enhacer;
