@@ -6,7 +6,7 @@ import MatchItemComponent from '@/components/MatchItemList';
 import './index.css'
 
 const MatchListComponent = ({ matchList, onItemClick, fetching }) => {
-  const itemsRenderer = matchList.list.map((match, index) => (
+  const itemsRenderer = matchList.map((match, index) => (
     <MatchItemComponent
       onItemClick={onItemClick}
       key={index}
