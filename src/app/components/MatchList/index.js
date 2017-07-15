@@ -8,6 +8,7 @@ import './index.css'
 const MatchListComponent = ({ matchList, onItemClick }) => {
   const itemsRenderer = matchList.list.map((match, index) => (
     <MatchItemComponent
+      onItemClick={onItemClick}
       key={index}
       match={match}
     />
