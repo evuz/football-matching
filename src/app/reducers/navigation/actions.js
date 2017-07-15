@@ -13,3 +13,13 @@ export function toogleLogin() {
     dispatch(push(pathname === '/login' ? 'register' : 'login'))
   }
 }
+
+export function goMatch(id) {
+  return (dispatch, getState) => {
+    const { user } = getState();
+    if (!user.email) {
+      return alert('You can\'t access here whitout log in with your user');
+    }
+    dispatch(push(`/match/${id}`));
+  }
+}
