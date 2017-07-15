@@ -47,6 +47,15 @@ export function getMatchesAPI() {
   }).then((res) => res.json());
 }
 
+export function getMatchAPI(id) {
+  return fetch(`${apiUrl}api/match/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json'
+    }
+  }).then((res) => res.json());
+}
+
 export function createPlayerAPI(values, token) {
   return fetch(`${apiUrl}api/player`, {
     method: 'POST',
