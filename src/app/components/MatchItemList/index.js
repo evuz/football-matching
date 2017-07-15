@@ -3,8 +3,10 @@ import { MdKeyboardArrowRight } from 'react-icons/lib/md';
 
 import './index.css';
 
-const MatchItemComponent = ({ match }) => (
-  <li className="math_item_component">
+const MatchItemListComponent = ({ match, onItemClick }) => (
+  <li className="math_item_list_component"
+    onClick={() => onItemClick(match._id)}
+  >
     <div className="first_column">
       <div className="name">{match.name}</div>
       <div className="description">{match.description}</div>
@@ -15,8 +17,8 @@ const MatchItemComponent = ({ match }) => (
     <MdKeyboardArrowRight style={{
       fontSize: '25px',
       color: '#757575'
-    }}/>
+    }} />
   </li>
 );
 
-export default MatchItemComponent;
+export default MatchItemListComponent;

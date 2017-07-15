@@ -1,11 +1,11 @@
 import React from 'react';
 
 import LoadingComponent from '@/components/Loading';
-import MatchItemComponent from '@/components/MatchItem';
+import MatchItemComponent from '@/components/MatchItemList';
 
 import './index.css'
 
-const MatchListComponent = ({ matchList }) => {
+const MatchListComponent = ({ matchList, onItemClick }) => {
   const itemsRenderer = matchList.list.map((match, index) => (
     <MatchItemComponent
       key={index}
