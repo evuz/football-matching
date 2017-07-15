@@ -5,7 +5,7 @@ import MatchItemComponent from '@/components/MatchItemList';
 
 import './index.css'
 
-const MatchListComponent = ({ matchList, onItemClick }) => {
+const MatchListComponent = ({ matchList, onItemClick, fetching }) => {
   const itemsRenderer = matchList.list.map((match, index) => (
     <MatchItemComponent
       onItemClick={onItemClick}
@@ -16,7 +16,7 @@ const MatchListComponent = ({ matchList, onItemClick }) => {
   return (
     <div className="match_list_component">
       {
-        matchList.fetching ?
+        fetching ?
           <LoadingComponent />
           :
           <ul>

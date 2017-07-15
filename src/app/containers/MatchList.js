@@ -21,7 +21,8 @@ class MatchListContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  matchList: state.matchList
+  fetching: state.matchList.fetching,
+  matchList: state.matchList.list
 })
 
 const mapDispatchToProps = {
