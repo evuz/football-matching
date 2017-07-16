@@ -9,9 +9,17 @@ const HeaderComponent = (props) => (
       onClick={props.onClickMenu}
     />
     <span>Header</span>
-    <MdPerson
-      onClick={props.onClickLogin}
-    />
+    {
+      props.img ?
+        <img
+          src={props.img}
+          alt={props.alt}
+          onClick={props.onClickImg}
+        /> :
+        <MdPerson
+          onClick={props.onClickImg}
+        />
+    }
   </div>
 );
 

@@ -10,4 +10,9 @@
   svg {
     font-size: 25px;
   }
+  img {
+    height: 21px;
+    border-radius: 5px;
+    border: 2px solid #FAF9F9;/**/
+  }
 }
