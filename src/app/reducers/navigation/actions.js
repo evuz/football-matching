@@ -23,3 +23,9 @@ export function goMatch(id) {
     dispatch(push(`/match/${id}`));
   }
 }
+
+export function goAddMatch() {
+  return (dispatch) => {
+    dispatch(push('/addMatch'))
+  }
+}
