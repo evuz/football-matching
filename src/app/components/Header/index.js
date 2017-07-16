@@ -8,7 +8,7 @@ const HeaderComponent = (props) => (
     <MdMenu
       onClick={props.onClickMenu}
     />
-    <span>Header</span>
+    <span onClick={props.onClickTitle}> Header</span>
     {
       props.img ?
         <img
