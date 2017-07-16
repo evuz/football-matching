@@ -1,6 +1,7 @@
 import { signUp, signIn, tokenSignIn } from '@/utils/api';
 import { getToken } from '@/utils/localStorage';
 import { setUser, removeUser } from '@/reducers/user';
+import { goLogin } from '@/reducers/navigation';
 import { setInitApp } from '@/reducers/app';
 
 export function loginWithToken() {
@@ -13,7 +14,7 @@ export function loginWithToken() {
             handleError(dispatch);
             return error;
           }
-          dispatch(setUser(user));
+          dispatch(setUser(Object.assign({}, user, {token})));
           dispatch(setInitApp(true))
         })
         .catch(() => handleError(dispatch))
@@ -42,7 +43,7 @@ export function registerSubmit(values) {
   return (dispatch) => {
     signUp(values)
       .then((res) => {
-        console.log(res);
+        dispatch(goLogin());
       })
   }
 }

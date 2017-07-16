@@ -19,3 +19,19 @@ export function goUserOptions(user) {
     dispatch(push('/user/options'))
   }
 }
+
+export function goMatch(id) {
+  return (dispatch, getState) => {
+    const { user } = getState();
+    if (!user.email) {
+      return alert('You can\'t access here whitout log in with your user');
+    }
+    dispatch(push(`/match/${id}`));
+  }
+}
+
+export function goAddMatch() {
+  return (dispatch) => {
+    dispatch(push('/addMatch'))
+  }
+}
