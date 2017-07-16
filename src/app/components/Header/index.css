@@ -2,12 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
+  flex: 0 1 25px;
   padding: 10px;
   background-color: #393856;
   color: #FAF9F9;
   font-size: 20px;
   svg {
     font-size: 25px;
+  }
+  img {
+    height: 21px;
+    border-radius: 5px;
+    border: 2px solid #FAF9F9;/**/
   }
 }

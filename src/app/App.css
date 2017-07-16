@@ -1,6 +1,11 @@
 .App {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+.body {
+  overflow: auto;
 }
 
 @keyframes App-logo-spin {

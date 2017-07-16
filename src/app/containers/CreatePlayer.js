@@ -2,16 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import FormsDecoratorComponent from '@/components/FormsDecorator';
-import LoginFormContainer from '@/containers/LoginForm';
+import CreatePlayerForm from '@/containers/CreatePlayerForm';
 import MatchListContainer from '@/containers/MatchList';
-import { toogleLogin } from '@/reducers/navigation';
-import { loginSubmit } from '@/reducers/login';
+import { createPlayerSubmit } from '@/reducers/user';
 import capitalizeFirstLetter from '@/utils/filters/capitalizeFirstLetter';
 
-const LoginContainer = (props) => (
+const CreatePlayerContainer = (props) => (
   <div className="body">
     <FormsDecoratorComponent title={capitalizeFirstLetter(props.screen)}>
-      <LoginFormContainer
+      <CreatePlayerForm
         onChangeScreen={props.onChangeScreen}
         onSubmit={props.onSubmit}
       />
@@ -21,12 +20,11 @@ const LoginContainer = (props) => (
 )
 
 const mapStateToProps = (state) => ({
-  screen: state.route.location.pathname.split('/')[1]
+  screen: 'Create Player'
 })
 
 const mapDispatchToProps = {
-  onChangeScreen: toogleLogin,
-  onSubmit: loginSubmit
+  onSubmit: createPlayerSubmit
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePlayerContainer);

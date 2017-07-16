@@ -1,19 +1,49 @@
-import { singUp, singIn } from '@/utils/api';
+import { signUp, signIn, tokenSignIn } from '@/utils/api';
+import { getToken } from '@/utils/localStorage';
+import { setUser, removeUser } from '@/reducers/user';
+import { goLogin } from '@/reducers/navigation';
+import { setInitApp } from '@/reducers/app';
+
+export function loginWithToken() {
+  return (dispatch) => {
+    const token = getToken();
+    if (token) {
+      tokenSignIn(token)
+        .then(({ error, user }) => {
+          if (error) {
+            handleError(dispatch);
+            return error;
+          }
+          dispatch(setUser(Object.assign({}, user, {token})));
+          dispatch(setInitApp(true))
+        })
+        .catch(() => handleError(dispatch))
+    } else {
+      dispatch(setInitApp(true))
+    }
+  }
+}
+
+function handleError(dispatch) {
+  dispatch(removeUser());
+  dispatch(setInitApp(true))
+}
 
 export function loginSubmit(values) {
   return (dispatch) => {
-    singIn(values)
-      .then(res => {
-        console.log(res);
+    signIn(values)
+      .then(({ error, user }) => {
+        if (error) return error;
+        dispatch(setUser(user));
       })
   }
 }
 
 export function registerSubmit(values) {
   return (dispatch) => {
-    singUp(values)
+    signUp(values)
       .then((res) => {
-        console.log(res);
+        dispatch(goLogin());
       })
   }
 }

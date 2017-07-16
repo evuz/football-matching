@@ -1,0 +1,26 @@
+.math_item_list_component {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #BDBDBD;
+  padding: 10px;
+  .first_column {
+    flex: 1;
+    .name {
+      font-weight: bold;
+      color: #212121;
+    }
+    .description {
+      font-size: 12px;
+      font-weight: bold;
+      color: #757575;
+    }
+  }
+
+  .second_column {
+    font-size: 14px;
+    height: 100%;
+    color: #212121;
+    flex: 1;
+  }
+}
