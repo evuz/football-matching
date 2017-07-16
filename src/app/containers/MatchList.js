@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import MatchListComponent from '@/components/MatchList';
-import { goMatch } from '@/reducers/navigation';
+import FloatingButtonComponent from '@/components/FloatingButton';
+import { goMatch, goAddMatch } from '@/reducers/navigation';
 import { getMatches } from '@/reducers/matchList';
 
 class MatchListContainer extends Component {
@@ -12,10 +13,15 @@ class MatchListContainer extends Component {
 
   render() {
     return (
-      <MatchListComponent
-        onItemClick={this.props.onItemClick}
-        matchList={this.props.matchList}
-      />
+      <div className="body">
+        <MatchListComponent
+          onItemClick={this.props.onItemClick}
+          matchList={this.props.matchList}
+        />
+        <FloatingButtonComponent
+          onClick={this.props.goAddMatch}
+        />
+      </div>
     );
   }
 }
@@ -27,6 +33,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   onItemClick: goMatch,
+  goAddMatch,
   getMatches
 }
 
