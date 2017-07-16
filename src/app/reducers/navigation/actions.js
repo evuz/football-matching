@@ -1,6 +1,12 @@
 import { } from './actionTypes';
 import { push } from 'react-router-redux';
 
+export function goMain(user) {
+  return (dispatch) => {
+    dispatch(push('/'))
+  }
+}
+
 export function goLogin(user) {
   return (dispatch) => {
     dispatch(push('/login'))
